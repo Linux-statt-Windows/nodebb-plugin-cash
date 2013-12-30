@@ -1,9 +1,10 @@
 var	fs = require('fs'),
 	path = require('path'),
 	nconf = require('nconf'),
-	meta = require('../../src/meta.js'),
-	user = require('../../src/user.js'),
-	templates = module.parent.require('../public/src/templates.js');
+	meta = require('../../src/metas'),
+	user = require('../../src/user'),
+	websockets = require('../../src/websockets'),
+	templates = module.parent.require('../public/src/templates');
 	
 var constants = Object.freeze({
 	'name': "Cash MOD",
@@ -68,7 +69,7 @@ CashMOD = {
 		user.incrementUserFieldBy(uid, 'currency', value);
 
 		setTimeout(function() {
-			global.io.sockets.in('uid_' + uid).emit('event:alert', {
+			websockets.in('uid_' + uid).emit('event:alert', {
 				alert_id: 'currency_increased',
 				message: 'You earned <strong>' + value + ' gold</strong> for posting',
 				type: 'info',
