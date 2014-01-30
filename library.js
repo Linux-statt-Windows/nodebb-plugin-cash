@@ -1,9 +1,9 @@
 var	fs = require('fs'),
 	path = require('path'),
 	nconf = require('nconf'),
-	meta = require('../../src/metas'),
+	meta = require('../../src/meta'),
 	user = require('../../src/user'),
-	websockets = require('../../src/websockets'),
+	websockets = require('../../src/socket.io/index.js'),
 	templates = module.parent.require('../public/src/templates');
 	
 var constants = Object.freeze({
