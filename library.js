@@ -10,7 +10,7 @@ var constants = Object.freeze({
 	'name': "Cash MOD",
 	'admin': {
 		'route': '/cash',
-		'icon': 'icon-money'
+		'icon': 'fa-money'
 	},
 	'defaults': {
 		'pay_per_character': 0.25,
