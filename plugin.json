@@ -5,12 +5,24 @@
 	"url": "https://github.com/psychobunny/nodebb-plugin-cash",
 	"library": "./library.js",
 	"hooks": [
-		{ "hook": "filter:admin.header.build", "method": "admin_registerPlugin", "callbacked": false },
-		{ "hook": "filter:admin.create_routes", "method": "admin_addRoute", "callbacked": true },
-		{ "hook": "filter:posts.custom_profile_info", "method": "addProfileInfo", "callbacked": true },
-		{ "hook": "action:post.save", "method": "increaseCurrencyByPostData", "callbacked": false }
+		{
+			"hook": "action:app.load", "method": "init"
+		},
+		{
+			"hook": "filter:admin.header.build", "method": "addAdminNavigation", "callbacked": false
+		},
+		{
+			"hook": "filter:admin.create_routes", "method": "admin_addRoute", "callbacked": true
+		},
+		{
+			"hook": "filter:posts.custom_profile_info", "method": "addProfileInfo", "callbacked": true
+		},
+		{
+			"hook": "action:post.save", "method": "increaseCurrencyByPostData", "callbacked": false
+		}
 	],
 	"staticDir": "./static",
+	"templates": "./static/templates",
 	"css": [
 		"style.css"
 	]
