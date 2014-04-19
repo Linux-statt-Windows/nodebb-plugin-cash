@@ -29,9 +29,19 @@ function renderAdmin(req, res, next) {
 	}
 }
 
+function getCash(req, res, next) {
+	user.getUserField(req.user.uid, 'currency', function(err, points) {
+		res.json({
+			currency: meta.config['cash:currency_name'] || 'points',
+			points: points || 0
+		});
+	});
+}
+
 Cash.init = function(app, middleware, controllers) {
 	app.get('/admin/cash', middleware.admin.buildHeader, renderAdmin);
 	app.get('/api/admin/cash', renderAdmin);
+	app.get('/api/cash', middleware.authenticate, getCash);
 };
 
 Cash.addAdminNavigation = function(custom_header, callback) {
