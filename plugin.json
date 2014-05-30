@@ -18,9 +18,8 @@
 			"hook": "action:post.save", "method": "increaseCurrencyByPostData", "callbacked": false
 		}
 	],
-	"staticDir": "./static",
 	"templates": "./static/templates",
 	"css": [
-		"style.css"
+		"./static/style.css"
 	]
 }
