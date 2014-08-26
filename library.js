@@ -59,7 +59,7 @@ Cash.addProfileInfo = function(profileInfo, callback) {
 
 	user.getUserField(profileInfo.uid, 'currency', function(err, data) {
 		profileInfo.profile.push({
-			content: "<span class='cash-mod-currency'><img src='" + nconf.get('url') + "/plugins/nodebb-plugin-cash/coin1.png' /> " + (data || 0) + " " + currency_name + "</span>"
+			content: "<span class='cash-mod-currency'><img src='" + nconf.get('url') + "./plugins/nodebb-plugin-cash/static/coin1.png' /> " + (data || 0) + " " + currency_name + "</span>"
 		});
 		callback(err, profileInfo);
 	});		

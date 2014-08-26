@@ -19,6 +19,9 @@
 		}
 	],
 	"templates": "./static/templates",
+	"staticDirs": {
+		"static": "./static"
+	},
 	"css": [
 		"./static/style.css"
 	]
