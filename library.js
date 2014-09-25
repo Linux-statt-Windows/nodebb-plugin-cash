@@ -4,7 +4,7 @@ var	fs = require('fs'),
 	meta = require('../../src/meta'),
 	user = require('../../src/user'),
 	websockets = require('../../src/socket.io/index.js'),
-	templates = module.parent.require('../public/src/templates');
+	templates = module.parent.require('templates.js');
 	
 var constants = Object.freeze({
 	'name': "Cash MOD",
