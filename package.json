@@ -1,6 +1,6 @@
 {
   "name": "nodebb-plugin-cash",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "description": "NodeBB Cash MOD",
   "main": "library.js",
   "scripts": {
