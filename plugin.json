@@ -6,7 +6,7 @@
 	"library": "./library.js",
 	"hooks": [
 		{
-			"hook": "action:app.load", "method": "init"
+			"hook": "static:app.load", "method": "init"
 		},
 		{
 			"hook": "filter:admin.header.build", "method": "addAdminNavigation", "callbacked": false
@@ -18,6 +18,9 @@
 			"hook": "action:post.save", "method": "increaseCurrencyByPostData", "callbacked": false
 		}
 	],
+	"nbbpm": {
+		"compatibility": "^0.6.0"
+	},
 	"templates": "./static/templates",
 	"staticDirs": {
 		"static": "./static"

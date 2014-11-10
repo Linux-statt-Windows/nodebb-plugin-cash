@@ -38,7 +38,11 @@ function getCash(req, res, next) {
 	});
 }
 
-Cash.init = function(app, middleware, controllers) {
+Cash.init = function(params, controllers) {
+	var app = params.app,
+		middleware = params.middleware,
+		controllers = params.controllers;
+		
 	app.get('/admin/cash', middleware.admin.buildHeader, renderAdmin);
 	app.get('/api/admin/cash', renderAdmin);
 	app.get('/api/cash', middleware.authenticate, getCash);
