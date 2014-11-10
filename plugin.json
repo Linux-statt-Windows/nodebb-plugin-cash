@@ -9,13 +9,13 @@
 			"hook": "static:app.load", "method": "init"
 		},
 		{
-			"hook": "filter:admin.header.build", "method": "addAdminNavigation", "callbacked": false
+			"hook": "filter:admin.header.build", "method": "addAdminNavigation"
 		},
 		{
-			"hook": "filter:posts.custom_profile_info", "method": "addProfileInfo", "callbacked": true
+			"hook": "filter:posts.custom_profile_info", "method": "addProfileInfo"
 		},
 		{
-			"hook": "action:post.save", "method": "increaseCurrencyByPostData", "callbacked": false
+			"hook": "action:post.save", "method": "increaseCurrencyByPostData"
 		}
 	],
 	"templates": "./static/templates",

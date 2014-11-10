@@ -57,7 +57,7 @@ Cash.addAdminNavigation = function(custom_header, callback) {
 		"name": constants.name
 	});
 
-	return custom_header;
+	callback(null, custom_header);
 };
 
 Cash.addProfileInfo = function(profileInfo, callback) {
