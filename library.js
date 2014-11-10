@@ -38,7 +38,7 @@ function getCash(req, res, next) {
 	});
 }
 
-Cash.init = function(params, controllers) {
+Cash.init = function(params, callback) {
 	var app = params.app,
 		middleware = params.middleware,
 		controllers = params.controllers;
