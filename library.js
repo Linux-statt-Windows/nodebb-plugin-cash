@@ -46,6 +46,8 @@ Cash.init = function(params, controllers) {
 	app.get('/admin/cash', middleware.admin.buildHeader, renderAdmin);
 	app.get('/api/admin/cash', renderAdmin);
 	app.get('/api/cash', middleware.authenticate, getCash);
+
+	callback();
 };
 
 Cash.addAdminNavigation = function(custom_header, callback) {
