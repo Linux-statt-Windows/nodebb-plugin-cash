@@ -44,7 +44,7 @@ Cash.init = function(params, callback) {
 		controllers = params.controllers;
 		
 	app.get('/admin/plugins/cash', middleware.admin.buildHeader, renderAdmin);
-	app.get('/api/admin/cash', renderAdmin);
+	app.get('/api/admin/plugins/cash', renderAdmin);
 	app.get('/api/cash', middleware.authenticate, getCash);
 
 	callback();
