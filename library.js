@@ -9,7 +9,7 @@ var	fs = require('fs'),
 var constants = Object.freeze({
 	'name': "Cash MOD",
 	'admin': {
-		'route': '/cash',
+		'route': '/plugins/cash',
 		'icon': 'fa-money'
 	},
 	'defaults': {
@@ -22,11 +22,11 @@ var constants = Object.freeze({
 var Cash = {};
 
 function renderAdmin(req, res, next) {
-	if (res.locals.isAPI) {
+	/*if (res.locals.isAPI) {
 		res.json({});
-	} else {
-		res.render('admin/cash', {});
-	}
+	} else {*/
+	res.render('admin/cash', {});
+	/*}*/
 }
 
 function getCash(req, res, next) {
@@ -43,7 +43,7 @@ Cash.init = function(params, callback) {
 		middleware = params.middleware,
 		controllers = params.controllers;
 		
-	app.get('/admin/cash', middleware.admin.buildHeader, renderAdmin);
+	app.get('/admin/plugins/cash', middleware.admin.buildHeader, renderAdmin);
 	app.get('/api/admin/cash', renderAdmin);
 	app.get('/api/cash', middleware.authenticate, getCash);
 
@@ -65,7 +65,7 @@ Cash.addProfileInfo = function(profileInfo, callback) {
 
 	user.getUserField(profileInfo.uid, 'currency', function(err, data) {
 		profileInfo.profile.push({
-			content: "<span class='cash-mod-currency'><img src='" + nconf.get('url') + "./plugins/nodebb-plugin-cash/static/coin1.png' /> " + (data || 0) + " " + currency_name + "</span>"
+			content: "<span class='cash-mod-currency'><img src='" + nconf.get('url') + "/plugins/nodebb-plugin-cash/static/coin1.png' /> " + (data || 0) + " " + currency_name + "</span>"
 		});
 		callback(err, profileInfo);
 	});		
